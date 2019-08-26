@@ -1,0 +1,50 @@
+#this is a kNN classifier with k hard coded to be 1
+import random
+
+from scipy.spatial import distance #we want to define a function that gives us the euclidean distance between points *note that as the number of features increases, the number of dimensions in the cartesian space increases as well
+
+def euc(a,b): #a is a training data point, b is a testing data point
+    return distance.euclidean(a,b) #gives distance between the two points above
+    
+
+class ScrappyKNN(): 
+    def fit(self, x_train, y_train): 
+        self.x_train = x_train
+        self.y_train = y_train 
+    
+    def predict(self, x_test): 
+        predictions = [] 
+        for row in x_test:
+            label = self.closest(row) #find the set of features that it is closest to
+            predictions.append(label)
+        return predictions
+    
+    def closest(self, row):
+        best_dist = euc(row, self.x_train[0]) #shortest distance so far
+        best_index = 0 #index we are checking
+        for i in range(1, len(self.x_train)): #iterating through the points to find the shortest distance
+            dist = euc(row, self.x_train[i])
+            if dist < best_dist: #everytime we find a shorter distance, we update the best_dist variable
+                best_dist = dist
+                best_index = i #needed to return the label of the closest point
+        return self.y_train[best_index]
+                
+        
+from sklearn import datasets
+iris = datasets.load_iris()
+
+x = iris.data
+y = iris.target
+
+from sklearn.model_selection import train_test_split 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = .5) 
+
+my_classifier = ScrappyKNN()
+
+my_classifier.fit(x_train, y_train) 
+
+predictions = my_classifier.predict(x_test) 
+print(predictions)
+
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test, predictions)) 
