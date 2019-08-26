@@ -1,0 +1,20 @@
+from sklearn import datasets
+iris = datasets.load_iris()
+
+x = iris.data
+y = iris.target
+
+from sklearn.model_selection import train_test_split #taking features and labels and partioning them into two sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = .5) #x/y_train are features/labels for training set, x/y_test are features and labels for testing set, test_szie = .5 says to use half data set for testing
+
+#Decision Tree classifier
+from sklearn import tree
+my_classifier = tree.DecisionTreeClassifier()
+
+my_classifier.fit(x_train, y_train)
+
+predictions = my_classifier.predict(x_test)
+print(predictions)
+
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test, predictions)) #compares predicted labels to y_test labels to generate accuracy
