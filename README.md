@@ -1,2 +1,2 @@
 # machineLearningBasics
-Code created as part of an introductory online machine learning course.
+Code created as part of my pathway to learning ML concepts
