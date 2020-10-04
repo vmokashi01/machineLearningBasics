@@ -1,6 +1,6 @@
 # machineLearningBasics
 
-I am using this space to keep track of small projects, courses, and tutorials I have followed to develop fundamental machine learning competences. So far this includes code created as part of my pathway to learning ML concepts (mini-projects and Kaggle tutorials) as well as problem sets and notes from Andrew Ng's CS 229 cours used to build thorough mathematical intuition. 
+I am using this space to keep track of small projects, courses, and tutorials I have followed to develop fundamental machine learning competences. So far this includes code created as part of my pathway to learning ML concepts (mini-projects and Kaggle tutorials) as well as problem sets and notes from Andrew Ng's CS 229 course used to build thorough mathematical intuition. 
 
 Topics covered: 
 - Supervised Learning
