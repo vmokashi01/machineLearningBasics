@@ -11,5 +11,11 @@ Topics covered:
   - Probabilistic Interpreations of Linear and Logistic Regression (Maximum Likelihood, Log Likelihood)
   - Locally Weighted Linear Regression
   - Logistic Regression/Sigmoid Function (Binary Classification, One-Vs-All)
+  - K-Nearest Neighbours Classification implementation
+  - Decision Trees
+  
+- Neural Networks
+  - ReLU, Leaky ReLU, Sigmoid, Softmax, TanH
+  - Forward and Back Propagation implementation
   
     
